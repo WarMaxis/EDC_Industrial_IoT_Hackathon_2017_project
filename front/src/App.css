@@ -1,18 +1,20 @@
-.App {
-  text-align: center;
+.navbar {
+	min-height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+@media (max-width: 991px) {
+	.navbar-nav,
+	.btn-group {
+		padding: 10px 0;
+	}
 }
 
-.App-title {
-  font-size: 1.5em;
-}
+@media (min-width: 992px) {
+	.navbar-collapse {
+		padding-left: 30px;
+	}
 
-.App-intro {
-  font-size: large;
+	.navbar-collapse .btn-group {
+		padding-right: 50px;
+	}
 }
