@@ -5,23 +5,38 @@ class AzimuthCard extends Component {
 		super(props);
 
 		this.state = {
-			azimuth: props.azimuth
+			azimuth: props.azimuth,
+			circleDegree: 'p' + Math.floor(this.props.azimuth / 360 * 100)
 		};
 	}
 
 	componentWillReceiveProps(nextProps) {
 		this.setState({
-			azimuth: nextProps.azimuth
+			azimuth: nextProps.azimuth,
+			circleDegree: 'p' + Math.floor(nextProps.azimuth / 360 * 100)
 		});
 	}
 
 	render() {
+		let circleStyle = {
+			transform: 'translateX(-50%)',
+			left: '50%'
+		};
+
 		return (
 			<div className="card" style={{ maxWidth: 100 + '%' }}>
-				<div className="card-body">
-					<h4 className="card-title">Azymut drona:</h4>
-					<p className="card-text">{this.state.azimuth} stopni</p>
-					<p className="card-text">&nbsp;</p>
+				<div className="card-body text-center">
+					<h4 className="card-title card-title-margin-bottom">Azymut drona:</h4>
+					<div
+						style={circleStyle}
+						className={'c100 green ' + this.state.circleDegree}
+					>
+						<span>{this.state.azimuth}&deg;</span>
+						<div className="slice">
+							<div className="bar" />
+							<div className="fill" />
+						</div>
+					</div>
 				</div>
 			</div>
 		);

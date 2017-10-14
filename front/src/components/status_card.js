@@ -18,18 +18,21 @@ class StatusCard extends Component {
 	}
 
 	render() {
-		let batteryStatusWidth = this.props.battery + '%',
+		let batteryStatusWidth = this.state.battery + '%',
 			batteryStatusColor = null,
 			batteryMessage = 'Wszystkie systemy sprawne',
 			alertColor = 'alert alert-success',
 			alertStatus = 'OK';
 
-		if (this.props.battery >= 50) {
-			batteryStatusColor = 'progress-bar bg-success';
-		} else if (this.props.battery > 15) {
-			batteryStatusColor = 'progress-bar bg-warning';
+		if (this.state.battery >= 50) {
+			batteryStatusColor =
+				'progress-bar bg-success progress-bar-striped progress-bar-animated';
+		} else if (this.state.battery > 15) {
+			batteryStatusColor =
+				'progress-bar bg-warning progress-bar-striped progress-bar-animated';
 		} else {
-			batteryStatusColor = 'progress-bar bg-danger';
+			batteryStatusColor =
+				'progress-bar bg-danger progress-bar-striped progress-bar-animated';
 			batteryMessage = 'UWAGA! Niski poziom baterii drona!';
 			alertColor = 'alert alert-danger';
 			alertStatus = 'CRITICAL!';
@@ -52,9 +55,6 @@ class StatusCard extends Component {
 							className={batteryStatusColor}
 							role="progressbar"
 							style={{ width: batteryStatusWidth }}
-							aria-valuenow="25"
-							aria-valuemin="0"
-							aria-valuemax="100"
 						>
 							{this.state.battery}%
 						</div>
