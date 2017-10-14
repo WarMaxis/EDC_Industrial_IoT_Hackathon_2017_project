@@ -26,28 +26,40 @@ class App extends Component {
 			Pitch: 0,
 			Roll: 0,
 			Battery: 0,
-			Time: 0
+			Time: 1
 		};
 	}
 
 	componentDidMount() {
-		// this.timer();
+		this.timer();
 	}
 
 	timer = () => {
 		setInterval(() => {
-			this.setState({
-				X: Math.random(),
-				Y: Math.random(),
-				Altitude: Math.random(),
-				Height: Math.random(),
-				Azimuth: Math.random(),
-				Pitch: Math.random(),
-				Roll: Math.random(),
-				Battery: Math.random(),
-				Time: Math.random()
-			});
-		}, 100);
+			let dataJson;
+
+			fetch('https://backend-cebula.run.aws-usw02-pr.ice.predix.io/getData')
+				.then(function(response) {
+					return response.json();
+				})
+				.then(body => {
+					dataJson = body;
+
+					this.setState({
+						X: dataJson.X.toFixed(2),
+						Y: dataJson.Y.toFixed(2),
+						Altitude: dataJson.Altitude.toFixed(2),
+						Height: dataJson.Height.toFixed(2),
+						Azimuth: dataJson.Azimuth.toFixed(2),
+						Pitch: dataJson.Pitch.toFixed(2),
+						Roll: dataJson.Roll.toFixed(2),
+						Battery: dataJson.Battery.toFixed(0)
+					});
+				})
+				.catch(function(error) {
+					console.log('Pobieranie danych się zepsuło!', error);
+				});
+		}, 1000);
 	};
 
 	render() {
