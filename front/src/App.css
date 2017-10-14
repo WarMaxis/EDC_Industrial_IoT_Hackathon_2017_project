@@ -1,11 +1,15 @@
 .navbar {
-	min-height: 80px;
+	min-height: 90px;
 }
 
 @media (max-width: 991px) {
 	.navbar-nav,
 	.btn-group {
 		padding: 10px 0;
+	}
+
+	.card {
+		margin-top: 20px;
 	}
 }
 
@@ -17,4 +21,18 @@
 	.navbar-collapse .btn-group {
 		padding-right: 50px;
 	}
+}
+
+.section {
+	padding-top: 50px;
+}
+
+.status-text {
+	font-size: 1.5rem;
+}
+
+.bd-footer {
+	background-color: #f3f3f3;
+	text-align: center;
+	margin-top: 40px;
 }
