@@ -1,0 +1,5 @@
+---
+applications:
+- name: backend-cebula
+  memory: 512M
+  instances: 1
