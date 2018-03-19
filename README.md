@@ -1,7 +1,7 @@
 # EDC Industrial IoT Hackathon 2017 project
 My team project made on _[EDC Industrial IoT Hackathon 2017](http://www.edc.pl/hackathon)_ __(we was on third place!)__.
 
-The challenge was to create a server app and prepare electronics on Raspberry Pi for receive analog signals from another RPi (prepared as __drone simulator__) and create application for data visualisation from this "mock" drone.
+The challenge was to create in 24 hours a server app and prepare electronics on Raspberry Pi for receive analog signals from another RPi (prepared as __drone simulator__) and create application for data visualisation from this "mock" drone.
 
 We used __Java__ to make server app on RPi, __[Express](https://expressjs.com/)__ for RESTful API and __[React](https://reactjs.org/)__ to make web application.
 
