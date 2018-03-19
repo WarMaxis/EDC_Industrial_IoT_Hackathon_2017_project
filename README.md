@@ -9,7 +9,7 @@ I made the last part of this project - web application in React :-) This was my 
 
 Created by __[Michał Milanowski](https://www.linkedin.com/in/michalmilanowski/)__, __[Tomasz Szarek](https://www.linkedin.com/in/tomasz-szarek-798373132/)__ and __[Sylwester Denko](https://www.linkedin.com/in/sylwester-denko-35aa59113/)__.
 
-Check this on __[https://warmaxis.github.io/EDC_Industrial_IoT_Hackathon_2017_project/)__  
+Check this on __(https://warmaxis.github.io/EDC_Industrial_IoT_Hackathon_2017_project/)__  
 (back-end and API don't work, but you can use _React plugin_ for browser to change the app state and see what happens)
 
 *More info and photos also on [Facebook hackathon event](https://www.facebook.com/events/1443940905659841/)
